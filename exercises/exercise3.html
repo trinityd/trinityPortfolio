@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Exercise 3 </title>
+	<link rel="icon" type ="image/png" href="../assignments/TriangleLogo.png" />
+	<style>
+	h1 {
+		text-align: center;
+	}
+	h2 {
+		text-align: center;
+	}
+	.pagetext {
+		background-color: white;
+		text-align: center;
+		display: inline-flex;
+	}
+	table, th, td {
+		border: 1px solid black;
+		text-align: center;
+		background-color: white;
+		table-layout: fixed;
+	}
+	body {
+		background-image: url("GreatWave.jpg");
+	}
+</style>
+</head>
+
+<body>
+	<div style="text-align: center"><img src="E3Bonzai.png"></div>
+	<p><a style="text-align:left" href="../index.html">Back</a></p>
+	<script>
+		var dolToYen = 113.09; //as of 10/2/2017
+		var hotelDol = 100;
+		var transDol = 80;
+		var foodDol = 100;
+		var souvDol = 50;
+		var totalDol = hotelDol+transDol+foodDol+souvDol;
+
+		var hotelYen = hotelDol*dolToYen;
+		var transYen = transDol*dolToYen;
+		var foodYen = foodDol*dolToYen;
+		var souvYen = souvDol*dolToYen;
+
+		var balDol = 1000-totalDol;
+
+		var balYen = dolToYen*balDol;
+		document.write("<table><tr><th> Description </th><th> Japanese Yen (¥) </th><th> US Dollar ($) </th></tr><tr><td> Hotel </td><td>"+hotelYen+"</td><td>"+hotelDol+"</td></tr><tr><td> Transportation </td><td>"+transYen+"</td><td>"+transDol+"</td></tr><tr><td> Food </td><td>"+foodYen+"</td><td>"+foodDol+"</td></tr><tr><td> Souvenirs </td><td>"+souvYen+"</td><td>"+souvDol+"</td></tr><tr><td> Balance </td><td>"+balYen+"</td><td>"+balDol+"</td></tr></table>");
+	</script>
+	<p class="pagetext"><b>Let's go to Japan!<b></p>
+	</body>
+	</html>
