@@ -3,7 +3,7 @@
 <head>
 	<link rel="icon" type ="image/png" href="../TriangleLogo.png" />
 	<meta charset="utf-8">
-	<title> Education </title>
+	<title> Project Info </title>
 	<style>
 	article {
 		margin: 0 auto;
@@ -11,15 +11,21 @@
 	}
 /*<article>
 	<p style="letter-spacing: 1px;font-family: serif;font-size: 120%;color: white;-webkit-text-stroke-width: 1px;webkit-text-stroke-color: black;">Friend Trinity Dickinson
-	<img src="../TriangleLogo.png" alt="Trinity Triangle" style="width:20%"></p>
+	<img src="TriangleLogo.png" alt="Trinity Triangle" style="width:20%"></p>
 	</article>*/
 	h1 {
 		text-align: center;
 	}
 	h2 {
-		text-align: center;
+		text-align: left;
 		font-size: 80%;
 	}
+	h3 {
+		text-align: left;
+		font-size: 80%;
+		text-indent: 50px;
+	}
+
 	a:link {
 		color: red;
 	}
@@ -28,6 +34,18 @@
 	}
 	a:visited {
 		color: darkred;
+	}
+	.bodytext {
+		text-align: center;
+	}
+	.border {
+		border: 1px solid #ccc;
+		border-radius: 16px;
+	}
+	.bodytext.border {
+		text-align: center;
+		border: 1px solid #ccc;
+		border-radius: 16px;
 	}
 </style>
 </head>
@@ -47,9 +65,48 @@
 	</hr>
 	<hr>
 </hr>
-<h1>Education</h1>
-<h2><p>Trinity, a computer science major, took AP Computer Science A in high school, for his first experience with Java.</p><p> He went on to an early entrance program at Clarkson University during the 2016-2017 school year, taking advanced C++, C/Assembly and MATLAB courses. Throughout, he maintained a <b>3.9 GPA.</b></p><p> He is currently taking further Java courses at De Anza, along with his first JavaScript/HTML/CSS course. </p>
-</h2>
+<h1>Project Info</h1>
+<script>
+	function productInfo(img, desc) {
+		this.img = img;
+		this.desc = desc;
+		this.disp = function() {
+			document.write("<img src=" + this.img + "><br>" + desc);
+		}
+	}
+
+	function function1() {
+		calculator = new productInfo("Calculator.jpeg", "A string-interpreting calculator designed in C++.");
+		calculator.disp();
+	}
+	function function2() {
+		snake = new productInfo("SnakeGame.png", "A simple snake game written with the p5 JavaScript library,");
+		snake.disp();
+	}
+	function function3() {
+		site = new productInfo("ThisSite.png", "The site you're looking at right now, made with HTML/CSS/JS.");
+		site.disp();
+	}
+	function function404() {
+		site = new productInfo("NotFound.jpg", "Sorry, we couldn't find that product.");
+		site.disp();
+	}
+
+	function selectProduct() {
+		var fname = prompt("Hi there! What's your first name?");
+		var lname = prompt("How about your last name?");
+		document.write("<p style='text-align: center'>Howdy doody, " + fname + " " + lname + ". Take a look at some infomation about one of my projects!</p><div class='bodytext border'>");
+		var fname = prompt("Please input a project to view it.\n(For example: '2' or 'item1' w/o quotes.)\nCurrent products: 1 through 3.");
+		if (fname == '1' || fname == 'item1') { function1(); }
+		else if (fname == '2' || fname == 'item2') { function2(); }
+		else if (fname == '3' || fname == 'item3') { function3(); }
+		else { function404(); }
+	}
+
+	selectProduct();
+</script>
+</div>
+
 <hr>
 <div style="text-align: center"><img src="../NameASCII.png" style="width: 60%;height: 60%;"></div>
 <div style="height: 75%;text-align: center"><img src="../cppLogo.png" style="width: 5%;height: 5%;padding: 2%;"><img src="../JavaLogo.png" style="width: 5%;height: 5%;padding-right: 1%;"><img src="../WebDevLogos.png" style="width: 25%;height: 25%;"></div>

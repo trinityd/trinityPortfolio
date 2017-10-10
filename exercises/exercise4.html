@@ -1,0 +1,48 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Exercise 4 </title>
+	<link rel="icon" type ="image/png" href="TriangleLogo.png" />
+	<link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
+	<style>
+	h1 {
+		text-align: center;
+	}
+	.bodytext {
+		text-align: center;
+	}
+	.border {
+		border: 1px solid #ccc;
+		border-radius: 16px;
+	}
+</style>
+</head>
+
+<body>
+	<h1><b>Exercise 4</b></h1>
+	<h1 style="font-family: 'Manuale', serif;"><b> Tip Calculator </b></h1>
+	<p><a href="../index.html">Back</a></p>
+
+	<div class="border">
+		<script>
+			function tipCalc(bill, percent) {
+				return bill*percent*.01;
+			}
+
+			var bill = prompt("I'll calculate your tip for you. First, please enter the bill amount.\n(For example, '100' or '45' w/o quotes)");
+			var percent = prompt("Next, please enter the percent you feel like tipping.\n(For example, '20' or '15' w/o quotes)");
+
+
+			var tip = tipCalc(bill, percent);
+			var total = +tip + +bill;
+
+			document.write("<p class='bodytext'>With a <b>$" + bill + "</b> bill, you should leave <b>$" + tip + "</b> for a <b>" + percent + "%</b> tip. In total, your bill with tip comes to <b>$" + total + "</b>.<br>Hope it was good!</p>");
+		</script>
+	</div>
+	<br>
+	<div class="border" style="text-align: center; width: 500px; height: auto; margin: 0 auto;">
+		<img src="TipCalc.jpg" alt="Incredible Complex Equations" style="padding-top: 20px; width: 400px; height: auto;">
+		<p>It's that easy.</p>
+	</div>
+</body>
+</html>

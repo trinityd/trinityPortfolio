@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Exercise 5 </title>
+	<link rel="icon" type ="image/png" href="TriangleLogo.png" />
+	<link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
+	<style>
+	h1 {
+		text-align: center;
+	}
+	.bodytext {
+		text-align: center;
+	}
+	.border {
+		border: 1px solid #ccc;
+		border-radius: 16px;
+	}
+	.border.bodytext {
+		border: 1px solid #ccc;
+		border-radius: 16px;
+		text-align: center;
+	}
+</style>
+</head>
+
+<body>
+	<h1><b>Exercise 5</b></h1>
+	<h1 style="font-family: 'Manuale', serif;"><b> Let's Go to The Movies! </b></h1>
+	<p><a href="../index.html">Back</a></p>
+
+	<div class="border bodytext" style="width: 600px; margin: 0 auto; padding-top: 10px; padding-bottom: 10px;">
+		<img src="PopAndSoda.jpg" alt="Mmm" style="width: 28%; height: auto; float: left; padding-left: 20px; padding-right: 20px">
+		<script>
+			function movie(genre, title, rating, price) {
+				this.genre = genre;
+				this.title = title;
+				this.rating = rating;
+				this.price = price;
+				this.show = function() {
+					document.write("Genre: <b>" + this.genre + "</b><br>Title: <b>" + this.title + "</b><br>Rating: <b>" + this.rating + "</b><br> Price: <b>$" + this.price + "</b><br>")
+				}
+			}
+			movie1 = new movie("SciFi", "Blade Runner 2049", "8.5/10", 12);
+			movie2 = new movie("Action", "Thor: Ragnarok", "7/10", 12);
+			movie1.show();
+			document.write("<br>");
+			movie2.show();
+		</script>
+	</div>
+	<br>
+	<div class="border bodytext" style="padding-top: 10px">
+		<img src="BRPoster.jpg" alt="Blade Runner 2049" style="display: inline-block; width: 30%; height: auto; vertical-align: center;">
+		<img src="Thor3.jpg" alt="Thor: Ragnarok" style="display: inline-block; width: 30%; height: auto; vertical-align: center;">
+	</div>
+	</body>
+	</html>
