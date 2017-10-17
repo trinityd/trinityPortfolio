@@ -5,6 +5,12 @@ function Snake() {
   this.yspeed = 0;
   this.total = 0;
   this.tail = [];
+  this.pause = -1;
+
+  this.setPause = function()
+  {
+    this.pause*=(-1);
+  }
 
   this.dir = function(x, y) {
     this.xspeed = x;

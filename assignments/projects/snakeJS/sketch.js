@@ -17,7 +17,7 @@ function draw() {
   fill(0);
   score = "Score: " + s.total;
   text(score, 340, 20);
-  s.update();
+  if (s.pause == -1) s.update();
   s.show();
   s.touchingBodyCheck();
 
@@ -30,7 +30,9 @@ function draw() {
 }
 
 function mousePressed() {
-  s.total++;
+  if (s.pause == -1) {
+    s.total++;
+  }
 }
 
 function addFood() {
@@ -51,6 +53,6 @@ function keyPressed() {
     s.dir(-1,0);
   }
   else if (keyCode == SHIFT) {
-    addFood();
+    s.setPause();
   }
 }

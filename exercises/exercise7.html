@@ -1,0 +1,106 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Exercise 7 </title>
+	<link rel="icon" type ="image/png" href="TriangleLogo.png" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<style>
+	h1 {
+		text-align: center;
+	}
+	.bodytext {
+		text-align: center;
+	}
+	.border {
+		border: 1px solid;
+		border-radius: 16px;
+	}
+	.border.bodytext {
+		border: 1px solid;
+		border-radius: 16px;
+		text-align: center;
+	}
+	body {
+		background-image: url("BlueTile.png");
+	}
+	table, tr, th, td {
+		border: 1px solid #ddd;
+		border-collapse: collapse;
+	}
+</style>
+</head>
+
+<body>
+	<h1><b>Exercise 7</b></h1>
+	
+	<div class="bodytext">
+		<img src="CamClipArt.png" style=" padding-right: 10px; width: 70px; height: auto; vertical-align: middle;">
+		<span style="font-size: 200%; font-family: 'Open Sans', serif;"><b> Movie Inventory II: Attack of the Killer 2D Array </b></span>
+		<img src="CamClipArt.png" style=" padding-left: 10px; width: 70px; height: auto; vertical-align: middle;">
+	</div>
+	<p><a href="../index.html">Back</a></p>
+
+	<script>
+		function movie(genre, title, rating, price, img, imdb) {
+			this.genre = genre;
+			this.title = title;
+			this.rating = rating;
+			this.price = price;
+			this.img = img;
+			this.imdb = imdb;
+			this.show = function() {
+				document.write("<div style='background-color: white; display: inline-block; margin: 10px; border-style: solid; padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; text-align: center'><div>Title: <b>" + this.title + "</b><br>Price: <b>$" + this.price + "</b><br> Rating: <b>" + this.rating + "</b> <a href='" + imdb + "'>(IMDB)</a><br><br></div><div><a href='" + imdb + "'><img style='max-width: 200px; height: auto;' src=" + img + "></a></div></div>")
+			}
+		}
+
+		var drama1 = new movie("Crime/Drama", "12 Angry Men", "R", 12, "12AngryMen.jpg", "http://www.imdb.com/title/tt0050083/");
+		var drama2 = new movie("Drama", "Steve Jobs", "R", 12, "SteveJobsPoster.jpg", "http://www.imdb.com/title/tt2080374/");
+		var drama3 = new movie("Drama", "The Big Short", "PG-13", 12, "BigShortPoster.jpg", "http://www.imdb.com/title/tt1596363/");
+
+		var scifi1 = new movie("SciFi", "Blade Runner 2049", "R", 12, "BRPoster.jpg", "http://www.imdb.com/title/tt1856101/");
+		var scifi2 = new movie("SciFi", "9", "PG-13", 12, "9Poster.jpg", "http://www.imdb.com/title/tt0472033/");
+		var scifi3 = new movie("SciFi", "The Martian", "PG-13", 12, "MartianPoster.jpg", "http://www.imdb.com/title/tt3659388/");
+
+		var action1 = new movie("Action", "Thor: Ragnarok", "PG-13", 12, "Thor3.jpg", "http://www.imdb.com/title/tt3501632/");
+		var action2 = new movie("Action", "Mad Max: Fury Road", "R", 12, "FuryRoadPoster.jpg", "http://www.imdb.com/title/tt1392190/");
+		var action3 = new movie("Action", "Die Hard", "R", 12, "DieHardPoster.jpg", "http://www.imdb.com/title/tt0095016/");
+
+		var drama = [drama1, drama2, drama3];
+		var scifi = [scifi1, scifi2, scifi3];
+		var action = [action1, action2, action3];
+
+		var movieArray = [drama, scifi, action];
+
+		document.write("<div><table style='margin: 0 auto; text-align: center;'><tr><th> Drama </th><th> Science Fiction </th><th> Action </th></tr>");
+		document.write("<tr><td>");
+		movieArray[0][0].show()
+		document.write("</td>");
+		document.write("<td>");
+		movieArray[1][0].show()
+		document.write("</td>");
+		document.write("<td>");
+		movieArray[2][0].show()
+		document.write("</td></tr>");
+
+		document.write("<tr><td>");
+		movieArray[0][1].show()
+		document.write("</td>");
+		document.write("<td>");
+		movieArray[1][1].show()
+		document.write("</td>");
+		document.write("<td>");
+		movieArray[2][1].show()
+		document.write("</td></tr>");
+
+		document.write("<tr><td>");
+		movieArray[0][2].show()
+		document.write("</td>");
+		document.write("<td>");
+		movieArray[1][2].show()
+		document.write("</td>");
+		document.write("<td>");
+		movieArray[2][2].show()
+		document.write("</td></tr></table></div>");
+	</script>
+</body>
+</html>

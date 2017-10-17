@@ -59,6 +59,7 @@
 		<a href="../accolades/index.html">Accolades</a>
 		<a href="../education/index.html">Education</a>
 		<a href="../goals/index.html">Goals</a>
+		<a href="../hobbies/index.html">Hobbies</a>
 		<a href="../projectInfo/index.html">Project Info</a>
 		<a href="../projects/index.html">Projects</a>
 		<a href="https://github.com/trinityd">GitHub</a>
@@ -71,31 +72,31 @@
 		this.img = img;
 		this.desc = desc;
 		this.disp = function() {
-			document.write("<img src=" + this.img + "><br>" + desc);
+			document.write("<img src=" + this.img + "><br><p style='padding-bottom:10px'>" + desc + "</p>");
 		}
 	}
 
 	function function1() {
-		calculator = new productInfo("Calculator.jpeg", "A string-interpreting calculator designed in C++.");
+		calculator = new productInfo("Calculator.jpeg", "<b>C++ Calculator: </b>A string-interpreting calculator designed in C++.");
 		calculator.disp();
 	}
 	function function2() {
-		snake = new productInfo("SnakeGame.png", "A simple snake game written with the p5 JavaScript library,");
+		snake = new productInfo("SnakeGame.png", "<b>Snake Game: </b>A simple snake game written with the p5 JavaScript library.");
 		snake.disp();
 	}
 	function function3() {
-		site = new productInfo("ThisSite.png", "The site you're looking at right now, made with HTML/CSS/JS.");
+		site = new productInfo("ThisSite.png", "<b>Trinity's Portfolio: </b>The site you're looking at right now, made with HTML/CSS/JS.");
 		site.disp();
 	}
 	function function404() {
-		site = new productInfo("NotFound.jpg", "Sorry, we couldn't find that product.");
-		site.disp();
+		notFound = new productInfo("NotFound.jpg", "<b>Not Found: </b>Sorry, we couldn't find that product.");
+		notFound.disp();
 	}
 
 	function selectProduct() {
 		var fname = prompt("Hi there! What's your first name?");
 		var lname = prompt("How about your last name?");
-		document.write("<p style='text-align: center'>Howdy doody, " + fname + " " + lname + ". Take a look at some infomation about one of my projects!</p><div class='bodytext border'>");
+		document.write("<p style='text-align: center'>Howdy doody, <b>" + fname + " " + lname + "</b>. Take a look at some infomation about one of my projects!</p><div class='bodytext border'>");
 		var fname = prompt("Please input a project to view it.\n(For example: '2' or 'item1' w/o quotes.)\nCurrent products: 1 through 3.");
 		if (fname == '1' || fname == 'item1') { function1(); }
 		else if (fname == '2' || fname == 'item2') { function2(); }
@@ -115,6 +116,7 @@
 <a href="../accolades/index.html">Accolades</a>
 <a href="../education/index.html">Education</a>
 <a href="../goals/index.html">Goals</a>
+<a href="../hobbies/index.html">Hobbies</a>
 <a href="../projectInfo/index.html">Project Info</a>
 <a href="../projects/index.html">Projects</a>
 <a href="https://github.com/trinityd">GitHub</a>

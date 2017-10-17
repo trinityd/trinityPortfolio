@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="icon" type ="image/png" href="../TriangleLogo.png" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta charset="utf-8">
+	<title> Hobbies </title>
+	<style>
+	article {
+		margin: 0 auto;
+		text-align: center;
+	}
+	h1 {
+		text-align: center;
+	}
+	h2 {
+		text-align: left;
+		font-size: 80%;
+	}
+	h3 {
+		text-align: left;
+		font-size: 80%;
+		text-indent: 50px;
+	}
+
+	a:link {
+		color: red;
+	}
+	a:hover {
+		color: darksalmon;
+	}
+	a:visited {
+		color: darkred;
+	}
+	table {
+		border-collapse: collapse;
+		width: 75%;
+	}
+
+	td {
+		text-align: center;
+		padding: 8px;
+		font-family: 'Open Sans', serif;
+	}
+	th {
+		text-align: center;
+		padding: 10px;
+	}
+	tr:nth-child(even){background-color: #f2f2f2}
+
+	th {
+		background-color: #20B2AA;
+		color: white;
+	}
+</style>
+</head>
+<body>
+	<article>
+		<p style="letter-spacing: 1px;font-family: serif;font-size: 120%;-webkit-text-stroke-width: 1px;webkit-text-stroke-color: black;">Friend Trinity Dickinson
+			<img src="../TriangleLogo.png" alt="Trinity Triangle" style="width:20%;vertical-align: middle;max-width: 80px"></p>
+		</article>
+		<hr>
+		<a href="../index.html">Home</a>
+		<a href="../accolades/index.html">Accolades</a>
+		<a href="../education/index.html">Education</a>
+		<a href="../goals/index.html">Goals</a>
+		<a href="../hobbies/index.html">Hobbies</a>
+		<a href="../projectInfo/index.html">Project Info</a>
+		<a href="../projects/index.html">Projects</a>
+		<a href="https://github.com/trinityd">GitHub</a>
+	</hr>
+	<hr>
+</hr>
+<h1>Hobbies</h1>
+
+<script>
+	function hobby(type, hpw, spec, yrstarted, funrating) {
+		this.type = type;
+		this.hpw = hpw;
+		this.spec = spec;
+		this.yrstarted = yrstarted;
+		this.funrating = funrating;
+	}
+
+	var prog1 = new hobby("Programming", 20, "FreeCodeCamp HTML/CSS Tutorials", 2017, "A+");
+	var prog2 = new hobby("Programming", 25, "JavaScript P5 Daniel Shiffman Tutorials", 2016, "A+");
+	var prog3 = new hobby("Programming", 20, "Python3 Sentdex Tutorials", 2017, "A+");
+
+	var aca1 = new hobby("Academic", 30, "Studying (Assignments + Review)", 2016, "A");
+	var aca2 = new hobby("Academic", 15, "Office Hours", 2016, "A+");
+
+	var ment1 = new hobby("Brainpower", 30, "Personal Reading", 2000, "A+");
+	var ment2 = new hobby("Brainpower", 20, "Piano Piece Practice", 2017, "A+");
+
+	var ath1 = new hobby("Athletic", 10, "Running", 2012, "B");
+	var ath2 = new hobby("Athletic", 10, "Weight Lifting (Upper Body)", 2012, "A+");
+	var ath3 = new hobby("Athletic", 10, "Weight Lifting (Lower Body)", 2012, "D-");
+	var ath4 = new hobby("Athletic", 10, "Skateboarding", 2016, "A");
+
+	var comm1 = new hobby("Community", 10, "Java Tutoring", 2015, "A+");
+	var comm2 = new hobby("Community", 10, "Volunteering", 2016, "A");
+
+	var programming = [prog1, prog2, prog3];
+	var academics = [aca1, aca2];
+	var brainpower = [ment1, ment2];
+	var athletics = [ath1, ath2, ath3, ath4];
+	var community = [comm1, comm2];
+
+	var hobbyArray = [programming, academics, brainpower, athletics, community];
+
+	document.write("<div><table style='margin: 0 auto; text-align: center;'><tr><th></th><th> Hobby </th><th> Hours Per Week </th><th> Year Began </th><th> Fun Rating </th></tr><tr><th> Programming </th><td>" + hobbyArray[0][0].spec + "</td><td>" + hobbyArray[0][0].hpw + "</td><td>" + hobbyArray[0][0].yrstarted + "</td><td>" + hobbyArray[0][0].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[0][1].spec + "</td><td>" + hobbyArray[0][1].hpw + "</td><td>" + hobbyArray[0][1].yrstarted + "</td><td>" + hobbyArray[0][1].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[0][2].spec + "</td><td>" + hobbyArray[0][2].hpw + "</td><td>" + hobbyArray[0][2].yrstarted + "</td><td>" + hobbyArray[0][2].funrating + "</td></tr><tr><th> Academics </th><td>" + hobbyArray[1][0].spec + "</td><td>" + hobbyArray[1][0].hpw + "</td><td>" + hobbyArray[1][0].yrstarted + "</td><td>" + hobbyArray[1][0].funrating + "</td></tr><tr><th>  </th><td>" + hobbyArray[1][1].spec + "</td><td>" + hobbyArray[1][1].hpw + "</td><td>" + hobbyArray[1][1].yrstarted + "</td><td>" + hobbyArray[1][1].funrating + "</td></tr><tr><th> Brainpower </th><td>" + hobbyArray[2][0].spec + "</td><td>" + hobbyArray[2][0].hpw + "</td><td>" + hobbyArray[2][0].yrstarted + "</td><td>" + hobbyArray[2][0].funrating + "</td></tr><tr><th>  </th><td>" + hobbyArray[2][1].spec + "</td><td>" + hobbyArray[2][1].hpw + "</td><td>" + hobbyArray[2][1].yrstarted + "</td><td>" + hobbyArray[2][1].funrating + "</td></tr><tr><th> Athletics </th><td>" + hobbyArray[3][0].spec + "</td><td>" + hobbyArray[3][0].hpw + "</td><td>" + hobbyArray[3][0].yrstarted + "</td><td>" + hobbyArray[3][0].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[3][1].spec + "</td><td>" + hobbyArray[3][1].hpw + "</td><td>" + hobbyArray[3][1].yrstarted + "</td><td>" + hobbyArray[3][1].funrating + "</td></tr><tr><th>  </th><td>" + hobbyArray[3][2].spec + "</td><td>" + hobbyArray[3][2].hpw + "</td><td>" + hobbyArray[3][2].yrstarted + "</td><td>" + hobbyArray[3][2].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[3][3].spec + "</td><td>" + hobbyArray[3][3].hpw + "</td><td>" + hobbyArray[3][3].yrstarted + "</td><td>" + hobbyArray[3][3].funrating + "</td></tr><tr><th> Community </th><td>" + hobbyArray[4][0].spec + "</td><td>" + hobbyArray[4][0].hpw + "</td><td>" + hobbyArray[4][0].yrstarted + "</td><td>" + hobbyArray[4][0].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[4][1].spec + "</td><td>" + hobbyArray[4][1].hpw + "</td><td>" + hobbyArray[4][1].yrstarted + "</td><td>" + hobbyArray[4][1].funrating + "</td></tr></table></div>");
+
+</script>
+
+<hr>
+<div style="text-align: center"><img src="../NameASCII.png" style="width: 60%;height: 60%;"></div>
+<div style="height: 75%;text-align: center"><img src="../cppLogo.png" style="width: 5%;height: 5%;padding: 2%;"><img src="../JavaLogo.png" style="width: 5%;height: 5%;padding-right: 1%;"><img src="../WebDevLogos.png" style="width: 25%;height: 25%;"></div>
+<hr>
+<a href="../index.html">Home</a>
+<a href="../accolades/index.html">Accolades</a>
+<a href="../education/index.html">Education</a>
+<a href="../goals/index.html">Goals</a>
+<a href="../hobbies/index.html">Hobbies</a>
+<a href="../projectInfo/index.html">Project Info</a>
+<a href="../projects/index.html">Projects</a>
+<a href="https://github.com/trinityd">GitHub</a>
+</hr>
+<hr>
+</hr>
+</body>
+</html>

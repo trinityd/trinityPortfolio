@@ -40,8 +40,8 @@
 					document.write("Genre: <b>" + this.genre + "</b><br>Title: <b>" + this.title + "</b><br>Rating: <b>" + this.rating + "</b><br> Price: <b>$" + this.price + "</b><br>")
 				}
 			}
-			movie1 = new movie("SciFi", "Blade Runner 2049", "8.5/10", 12);
-			movie2 = new movie("Action", "Thor: Ragnarok", "7/10", 12);
+			var movie1 = new movie("SciFi", "Blade Runner 2049 <a href='http://www.imdb.com/title/tt1856101/'>(IMDB)<a>", "R", 12);
+			var movie2 = new movie("Action", "Thor: Ragnarok <a href='http://www.imdb.com/title/tt3501632/'>(IMDB)<a>", "PG-13", 11.50);
 			movie1.show();
 			document.write("<br>");
 			movie2.show();
@@ -49,8 +49,8 @@
 	</div>
 	<br>
 	<div class="border bodytext" style="padding-top: 10px">
-		<img src="BRPoster.jpg" alt="Blade Runner 2049" style="display: inline-block; width: 30%; height: auto; vertical-align: center;">
-		<img src="Thor3.jpg" alt="Thor: Ragnarok" style="display: inline-block; width: 30%; height: auto; vertical-align: center;">
+		<a href='http://www.imdb.com/title/tt1856101/'><img src="BRPoster.jpg" alt="Blade Runner 2049" style="display: inline-block; width: 30%; height: auto; vertical-align: center;"></a>
+		<a href='http://www.imdb.com/title/tt3501632/'><img src="Thor3.jpg" alt="Thor: Ragnarok" style="display: inline-block; width: 30%; height: auto; vertical-align: center;"></a>
 	</div>
 	</body>
 	</html>
