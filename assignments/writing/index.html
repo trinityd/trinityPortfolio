@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script> 
-		confirm("OMG!\n Are you SURE you want to look at my goals page?");
-	</script>
 	<link rel="icon" type ="image/png" href="../TriangleLogo.png" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<meta charset="utf-8">
-	<title> Goals </title>
+	<title> Writing </title>
 	<style>
 	article {
 		margin: 0 auto;
@@ -29,6 +27,10 @@
 	a:visited {
 		color: darkred;
 	}
+	.center {
+		text-align: center;
+	}
+
 </style>
 </head>
 <body>
@@ -49,14 +51,22 @@
 	</hr>
 	<hr>
 </hr>
-<h1>Goals</h1>
-<div style='width: 50%; margin: 0 auto'>
-<h2><p>Trinity plans on graduating from a top California school and finishing off his BS in Computer Science, and entering the field as a web and/or software developer. He's gonna work hard to make sure that happens!</p>
-	<p> 
-		Before then, Trinity hopes to get as much work experience as possible while he's still in school. To contact him about internship/coop opportunities, please email ftrinitydickinson@gmail.com.
-	</p>
-</h2>
-</div>
+<h1>Writing</h1>
+<h2>Trinity enjoys writing, and has even won an award in high school for it. (See my <a href="../accolades/index.html">Accolades</a> page.)</h2>
+<h2>Here are some selected essays written by Trinity, pick one and it will open in a popup.</h2>
+
+<script>
+	var e1, e2 = null;
+	function popUp(url) { 
+	 		var p = window.open(url,"","width=500,height=300,scrollbars,resizable"); 
+	 		p.focus(); 
+	 		return p; 
+	}
+</script>
+
+<p class='center'><a href='javascript:popUp("essay1.html")'>Essay 1</a>
+<p class='center'><a href='javascript:popUp("essay2.html")'>Essay 2</a>
+
 <hr>
 <div style="text-align: center"><img src="../NameASCII.png" style="width: 60%;height: 60%;"></div>
 <div style="height: 75%;text-align: center"><img src="../cppLogo.png" style="width: 5%;height: 5%;padding: 2%;"><img src="../JavaLogo.png" style="width: 5%;height: 5%;padding-right: 1%;"><img src="../WebDevLogos.png" style="width: 25%;height: 25%;"></div>

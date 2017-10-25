@@ -19,6 +19,18 @@
 		border: 1px solid;
 		border-radius: 16px;
 		text-align: center;
+		background: rgba(255, 255, 255, .4);
+	}
+	.outerdiv {
+		background-color: white; 
+		display: inline-block; 
+		margin: 10px; 
+		border-style: solid; 
+		padding-top: 30px; 
+		padding-bottom: 30px; 
+		padding-left: 30px; 
+		padding-right: 30px; 
+		text-align: center;
 	}
 	body {
 		background-image: url("PopcornBG.jpg");
@@ -34,7 +46,7 @@
 		<span style="font-size: 200%; font-family: 'Manuale', serif;"><b> Taking Some (Movie) Inventory </b></span>
 		<img src="CamClipArt.png" style=" padding-left: 10px; width: 70px; height: auto; vertical-align: middle;">
 	</div>
-	<p><a href="../index.html">Back</a></p>
+	<p><a href="index.html">Back</a></p>
 
 	<script>
 		function movie(genre, title, rating, price, img, imdb) {
@@ -45,15 +57,17 @@
 			this.img = img;
 			this.imdb = imdb;
 			this.show = function() {
-				document.write("<div style='background-color: white; display: inline-block; margin: 10px; border-style: solid; padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; text-align: center'><div>Genre: <b>" + this.genre + "</b><br>Title: <b>" + this.title + "</b><br>Rating: <b>" + this.rating + "</b><br> Price: <b>$" + this.price + "</b> <a href='" + imdb + "'>(IMDB)</a><br><br></div><div><a href='" + imdb + "'><img style='max-width: 200px; height: auto;' src=" + img + "></a></div></div>")
+				document.write("<div class='outerdiv'><div>Genre: <b>" + this.genre + "</b><br>Title: <b>" + this.title + "</b><br>Rating: <b>" + this.rating + "</b><br> Price: <b>$" + this.price + "</b> <a href='" + imdb + "'>(IMDB)</a><br><br></div><div><a href='" + imdb + "'><img style='max-width: 200px; height: auto;' src=" + img + "></a></div></div>")
 			}
 		}
 
-		var movieArray = [];
+		var movieArray = new Array();
 		var movie1 = new movie("Crime/Drama", "12 Angry Men", "R", 12, "12AngryMen.jpg", "http://www.imdb.com/title/tt0050083/");
 		var movie2 = new movie("SciFi", "Blade Runner 2049", "R", 12, "BRPoster.jpg", "http://www.imdb.com/title/tt1856101/");
 		var movie3 = new movie("Action", "Thor: Ragnarok", "PG-13", 11.50, "Thor3.jpg", "http://www.imdb.com/title/tt3501632/");
-		var movieArray = [movie1, movie2, movie3];
+		movieArray.push(movie1);
+		movieArray.push(movie2);
+		movieArray.push(movie3);
 
 		document.write("<div class='border bodytext'><p class='bodytext'>Number of movies in the inventory: " + movieArray.length + "</p>");
 		for(var i = 0; i < movieArray.length; i++) {
@@ -62,20 +76,20 @@
 		document.write("</div><br>");
 
 		document.write("<div class='border bodytext'><p class='bodytext'>Pop and display the popped movie:</p>");
-		movieArray[2].show();
-		movieArray.pop();
+		var pmovie1 = movieArray.pop();
+		pmovie1.show();
 		document.write("</div><br>");
 
 		document.write("<div class='border bodytext'><p class='bodytext'>Number of movies in the inventory: " + movieArray.length + "</p>");
 
 		document.write("<p class='bodytext'>Pop another one and display the popped movie:</p>");
-		movieArray[1].show();
-		movieArray.pop();
+		var pmovie2 = movieArray.pop();
+		pmovie2.show();
 		document.write("</div><br>");
 
 		document.write("<div class='border bodytext'><p class='bodytext'>Number of movies in the inventory: " + movieArray.length + "</p>");
 		document.write("<p class='bodytext'>Unshift the last popped movie and display the inventory.</p>");
-		movieArray.unshift(movie2);
+		movieArray.unshift(pmovie2);
 		document.write("<p class='bodytext'>Number of movies in the inventory: " + movieArray.length + "</p>");
 		for(var i = 0; i < movieArray.length; i++) {
 			movieArray[i].show();
@@ -83,8 +97,8 @@
 		document.write("</div><br>");
 
 		document.write("<div class='border bodytext'><p class='bodytext'>Do another pop and display the popped movie:</p>");
-		movieArray[1].show();
-		movieArray.pop();
+		var pmovie3 = movieArray.pop();
+		pmovie3.show();
 		document.write("</div><br>");
 
 		document.write("<div class='border bodytext'><p class='bodytext'>Number of movies in the inventory: " + movieArray.length + "</p>");
@@ -95,7 +109,7 @@
 		document.write("</div><br>");
 
 		document.write("<div class='border bodytext'><p class='bodytext'>Push the first popped and display the inventory.</p>");
-		movieArray.push(movie3);
+		movieArray.push(pmovie1);
 		document.write("<p class='bodytext'>Number of movies in the inventory: " + movieArray.length + "</p>");
 		for(var i = 0; i < movieArray.length; i++) {
 			movieArray[i].show();
@@ -103,8 +117,8 @@
 		document.write("</div><br>");
 
 		document.write("<div class='border bodytext'><p class='bodytext'>Shift and display the shifted movie.</p>");
-		movieArray[0].show();
-		movieArray.shift();
+		var smovie1 = movieArray.shift();
+		smovie1.show();
 		document.write("</div><br>");
 
 		document.write("<div class='border bodytext'><p class='bodytext'>Number of movies in the inventory: " + movieArray.length + "</p>");

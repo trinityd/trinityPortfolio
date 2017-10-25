@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Exercise 8 </title>
+	<link rel="icon" type ="image/png" href="TriangleLogo.png" />
+	<link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
+	<style>
+	h1 {
+		text-align: center;
+	}
+	.bodytext {
+		text-align: center;
+	}
+	.border {
+		border: 1px solid #ccc;
+		border-radius: 16px;
+	}
+	.border.bodytext {
+		border: 1px solid #ccc;
+		border-radius: 16px;
+		text-align: center;
+	}
+</style>
+</head>
+
+<body>
+	<h1><b>Exercise 9</b></h1>
+	<h1 style="font-family: 'Manuale', serif;"><b> Document, Location, Etc. </b></h1>
+	<p><a href="index.html">Back</a></p>
+
+	<script type="text/javascript">
+		var screenHeight = window.screen.height;
+		var screenWidth = window.screen.width;
+
+		window.document.write("Screen width: " + screenWidth + " Screen height: " + screenHeight +  "<br><br>");
+
+
+	 	var myWin = window.open('','',"height=300,width=300,left=0,top=0,scrollbars,status,resizable,dependent");
+	 	var myWinWidth = myWin.outerWidth;
+	 	var myWinHeight = myWin.outerHeight;
+	 	myWin.document.write("<style>body { background-color: darkred; } .text1 { color: beige; } .text2 { color: cornflowerblue; } <\/style>")<
+	 	myWin.document.write("<body><div class='text2'>Old width: " + myWinWidth + " Old height: " + myWinHeight + "<br><br></div>");
+
+	 	function resizeWindow(w, p) {
+	 		w.resizeTo(screenWidth*p, screenHeight*p);
+	 		w.document.write("<div class='text2'>New width: " + w.outerWidth + " New height: " + w.outerHeight + "</div>");
+	 	}
+
+	 	setTimeout(resizeWindow, 2000, myWin, .5);
+	 	myWin.document.write("<div class='text1'>Navigator Object Info: <br><div style='padding-left:4em;'>appCodeName = " + navigator.AppCodeName + "<br>appName = " + navigator.appName + "<br>appVersion = " + navigator.appVersion + "<br>cookieEnabled = " + navigator.cookieEnabled + "<br>language = " + navigator.language + "<br>mimeTypes = " + navigator.mimeTypes + "<br>onLine = " + navigator.onLine + "<br>platform = " + navigator.platform + "<br>plugins = " + navigator.plugins + "<br>userAgent = " + navigator.userAgent + "</div><br></div></body>");
+
+
+	 </script>
+
+	</body>
+	</html>

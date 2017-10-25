@@ -38,7 +38,7 @@
 		<span style="font-size: 200%; font-family: 'Open Sans', serif;"><b> Movie Inventory II: Attack of the Killer 2D Array </b></span>
 		<img src="CamClipArt.png" style=" padding-left: 10px; width: 70px; height: auto; vertical-align: middle;">
 	</div>
-	<p><a href="../index.html">Back</a></p>
+	<p><a href="index.html">Back</a></p>
 
 	<script>
 		function movie(genre, title, rating, price, img, imdb) {
@@ -65,41 +65,50 @@
 		var action2 = new movie("Action", "Mad Max: Fury Road", "R", 12, "FuryRoadPoster.jpg", "http://www.imdb.com/title/tt1392190/");
 		var action3 = new movie("Action", "Die Hard", "R", 12, "DieHardPoster.jpg", "http://www.imdb.com/title/tt0095016/");
 
-		var drama = [drama1, drama2, drama3];
-		var scifi = [scifi1, scifi2, scifi3];
-		var action = [action1, action2, action3];
+		var row1 = [drama1, scifi1, action1];
+		var row2 = [drama2, scifi2, action2];
+		var row3 = [drama3, scifi3, action3];
 
-		var movieArray = [drama, scifi, action];
+		var movieArray = [row1, row2, row3];
 
 		document.write("<div><table style='margin: 0 auto; text-align: center;'><tr><th> Drama </th><th> Science Fiction </th><th> Action </th></tr>");
-		document.write("<tr><td>");
-		movieArray[0][0].show()
-		document.write("</td>");
-		document.write("<td>");
-		movieArray[1][0].show()
-		document.write("</td>");
-		document.write("<td>");
-		movieArray[2][0].show()
-		document.write("</td></tr>");
+		movieArray.forEach(function(item, index, array) {
+			document.write("<tr>");
+			item.forEach(function(item, index, array) {
+				document.write("<td>");
+				item.show();
+				document.write("</td>");
+			})
+			document.write("</tr>");
+		})
+		// document.write("<tr><td>");
+		// movieArray[0][0].show()
+		// document.write("</td>");
+		// document.write("<td>");
+		// movieArray[1][0].show()
+		// document.write("</td>");
+		// document.write("<td>");
+		// movieArray[2][0].show()
+		// document.write("</td></tr>");
 
-		document.write("<tr><td>");
-		movieArray[0][1].show()
-		document.write("</td>");
-		document.write("<td>");
-		movieArray[1][1].show()
-		document.write("</td>");
-		document.write("<td>");
-		movieArray[2][1].show()
-		document.write("</td></tr>");
+		// document.write("<tr><td>");
+		// movieArray[0][1].show()
+		// document.write("</td>");
+		// document.write("<td>");
+		// movieArray[1][1].show()
+		// document.write("</td>");
+		// document.write("<td>");
+		// movieArray[2][1].show()
+		// document.write("</td></tr>");
 
-		document.write("<tr><td>");
-		movieArray[0][2].show()
-		document.write("</td>");
-		document.write("<td>");
-		movieArray[1][2].show()
-		document.write("</td>");
-		document.write("<td>");
-		movieArray[2][2].show()
+		// document.write("<tr><td>");
+		// movieArray[0][2].show()
+		// document.write("</td>");
+		// document.write("<td>");
+		// movieArray[1][2].show()
+		// document.write("</td>");
+		// document.write("<td>");
+		// movieArray[2][2].show();
 		document.write("</td></tr></table></div>");
 	</script>
 </body>

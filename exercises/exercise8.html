@@ -1,0 +1,87 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Exercise 8 </title>
+	<link rel="icon" type ="image/png" href="TriangleLogo.png" />
+	<link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
+	<style>
+	h1 {
+		text-align: center;
+	}
+	.bodytext {
+		text-align: center;
+	}
+	.border {
+		border: 1px solid #ccc;
+		border-radius: 16px;
+	}
+	.border.bodytext {
+		border: 1px solid #ccc;
+		border-radius: 16px;
+		text-align: center;
+	}
+</style>
+</head>
+
+<body>
+	<h1><b>Exercise 8</b></h1>
+	<h1 style="font-family: 'Manuale', serif;"><b> Blade Runner 2049 </b></h1>
+	<p><a href="index.html">Back</a></p>
+
+	<script type="text/javascript">
+	 	function movie(blurb, movieInfo, actorInfo) {
+	 		this.blurb = blurb;
+	 		this.movieInfo = movieInfo;
+	 		this.actorInfo = actorInfo;
+	 		this.showIn = function(w) {
+	 			w.document.write(this.blurb + "<br>");
+	 		}
+	 	}
+	 	var movie1 = new movie("A sequel to the 1982 sci-fi classic. Officer K (Ryan Gosling), a new blade runner for the Los Angeles Police Department, unearths a long-buried secret that has the potential to plunge what's left of society into chaos. His discovery leads him on a quest to find Rick Deckard (Harrison Ford), a former blade runner who's been missing for 30 years.", "https://www.imdb.com/title/tt1856101", ["https://www.imdb.com/name/nm0331516/","https://www.imdb.com/name/nm0000148/"]);
+	 	var actorBio = ["Canadian actor Ryan Gosling is the first person born in the 1980s to have been nominated for the Best Actor Oscar (for Half Nelson (2006)). He was born Ryan Thomas Gosling on November 12, 1980, in London, Ontario, Canada.", "Born on July 13, 1942 in Chicago, Illinois, actor Harrison Ford has starred in some of Hollywood's biggest films, including Star Wars and Raiders of the Lost Ark. He grew up in Des Plaines, a suburb of Chicago, as the son of an advertising executive and a stay-at-home mother."];
+
+	 	var myWin, p1, p2, p3 = null;
+	 	function myWinLink(url) {
+	 		myWin = myWin.open(url,"_self","height=400,width=800,left=200,top=100,scrollbars,status,resizable,dependent");
+	 	}
+	 	function PopUpWindow(url) { 
+	 		var p = window.open(url,"","height=200,width=400,left=800,top=100,scrollbars,status,resizable,dependent"); 
+	 		p.focus(); 
+	 		return p; 
+	 	}
+	 	function pop1(url) { 
+	 		p1 = PopUpWindow(url); 
+	 	}
+	 	function pop2(url) { 
+	 		p2 = PopUpWindow();
+	 		p2.document.write(actorBio[0] + "<br>");
+	 		p2.document.write("<body style='text-align:center;'><a href='javascript:opener.myWinLink(\"" + movie1.actorInfo[0] + "\")'><b><i>Click here for more information.</b></i></a></body>");
+	 	}
+	 	function pop3(url) { 
+	 		p3 = PopUpWindow();
+	 		p3.document.write(actorBio[1] + "<br>");
+	 		p3.document.write("<body style='text-align:center;'><a href='javascript:opener.myWinLink(\"" + movie1.actorInfo[1] + "\")'><b><i>Click here for more information.</b></i></a></body>");
+	 	}
+	 	function close1() { 
+	 		if (p1 != null) { p1.close(); } 
+	 	} 
+	 	function close2() { 
+	 		if (p2 != null) { p2.close(); } 
+	 	} 
+	 	function close3() { 
+	 		if (p3 != null) { p3.close(); }
+	 	}
+
+	 	var myWin= window.open('','',"height=400,width=800,left=200,top=100,scrollbars,status,resizable,dependent");
+	 	myWin.document.write("<style>body { text-align: center; background-image: url(\"BRPoster.jpg\"); } .border { border: 1px solid; padding: 5px 5px 5px 5px; border-radius: 16px; background: rgba(255, 255, 255, .7);}<\/style>");
+	 	myWin.document.write("<body><div class='border'><h1>Blade Runner: 2049</h1>");
+	 	movie1.showIn(myWin);
+	 	
+	 	myWin.document.write("<script> function openLink(<\/script>")
+	 	myWin.document.write("<br><a href='javascript:opener.pop1(\"" + movie1.movieInfo + "\")'>Click here to open Blade Runner: 2049's IMDB page.</a><br><a href='javascript:opener.close1()'>Click here to close BR2049's IMDB page.</a><br>");
+	 	myWin.document.write("<a href='javascript:opener.pop2(\"" + movie1.actorInfo[0] + "\")'>Click here for information on Ryan Gosling.</a><br><a href='javascript:opener.close2()'>Click here to close the information on Ryan Gosling.</a><br>");
+	 	myWin.document.write("<a href='javascript:opener.pop3(\"" + movie1.actorInfo[1] + "\")'>Click here for information on Harrison Ford.</a><br><a href='javascript:opener.close3()'>Click here to close the information on Harrison Ford.</a><br><a href='javascript:close()'>Click here to close this page.</a><br><br>");
+	 </script>
+
+	</body>
+	</html>

@@ -32,11 +32,12 @@
 	a:visited {
 		color: darkred;
 	}
+
 	table {
 		border-collapse: collapse;
 		width: 75%;
+		border-spacing: 0;
 	}
-
 	td {
 		text-align: center;
 		padding: 8px;
@@ -44,14 +45,14 @@
 	}
 	th {
 		text-align: center;
-		padding: 10px;
-	}
-	tr:nth-child(even){background-color: #f2f2f2}
-
-	th {
+		padding: 5px 4px 4px 4px;
 		background-color: #20B2AA;
 		color: white;
 	}
+	tr:nth-child(even){
+		background-color: #f2f2f2
+	}
+
 </style>
 </head>
 <body>
@@ -67,6 +68,7 @@
 		<a href="../hobbies/index.html">Hobbies</a>
 		<a href="../projectInfo/index.html">Project Info</a>
 		<a href="../projects/index.html">Projects</a>
+		<a href="../writing/index.html">Writing</a>
 		<a href="https://github.com/trinityd">GitHub</a>
 	</hr>
 	<hr>
@@ -80,6 +82,12 @@
 		this.spec = spec;
 		this.yrstarted = yrstarted;
 		this.funrating = funrating;
+		this.show = function() {
+			document.write("<td>" + this.spec + "</td>");
+			document.write("<td>" + this.hpw + "</td>");
+			document.write("<td>" + this.yrstarted + "</td>");
+			document.write("<td>" + this.funrating + "</td></tr>");
+		}
 	}
 
 	var prog1 = new hobby("Programming", 20, "FreeCodeCamp HTML/CSS Tutorials", 2017, "A+");
@@ -108,7 +116,33 @@
 
 	var hobbyArray = [programming, academics, brainpower, athletics, community];
 
-	document.write("<div><table style='margin: 0 auto; text-align: center;'><tr><th></th><th> Hobby </th><th> Hours Per Week </th><th> Year Began </th><th> Fun Rating </th></tr><tr><th> Programming </th><td>" + hobbyArray[0][0].spec + "</td><td>" + hobbyArray[0][0].hpw + "</td><td>" + hobbyArray[0][0].yrstarted + "</td><td>" + hobbyArray[0][0].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[0][1].spec + "</td><td>" + hobbyArray[0][1].hpw + "</td><td>" + hobbyArray[0][1].yrstarted + "</td><td>" + hobbyArray[0][1].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[0][2].spec + "</td><td>" + hobbyArray[0][2].hpw + "</td><td>" + hobbyArray[0][2].yrstarted + "</td><td>" + hobbyArray[0][2].funrating + "</td></tr><tr><th> Academics </th><td>" + hobbyArray[1][0].spec + "</td><td>" + hobbyArray[1][0].hpw + "</td><td>" + hobbyArray[1][0].yrstarted + "</td><td>" + hobbyArray[1][0].funrating + "</td></tr><tr><th>  </th><td>" + hobbyArray[1][1].spec + "</td><td>" + hobbyArray[1][1].hpw + "</td><td>" + hobbyArray[1][1].yrstarted + "</td><td>" + hobbyArray[1][1].funrating + "</td></tr><tr><th> Brainpower </th><td>" + hobbyArray[2][0].spec + "</td><td>" + hobbyArray[2][0].hpw + "</td><td>" + hobbyArray[2][0].yrstarted + "</td><td>" + hobbyArray[2][0].funrating + "</td></tr><tr><th>  </th><td>" + hobbyArray[2][1].spec + "</td><td>" + hobbyArray[2][1].hpw + "</td><td>" + hobbyArray[2][1].yrstarted + "</td><td>" + hobbyArray[2][1].funrating + "</td></tr><tr><th> Athletics </th><td>" + hobbyArray[3][0].spec + "</td><td>" + hobbyArray[3][0].hpw + "</td><td>" + hobbyArray[3][0].yrstarted + "</td><td>" + hobbyArray[3][0].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[3][1].spec + "</td><td>" + hobbyArray[3][1].hpw + "</td><td>" + hobbyArray[3][1].yrstarted + "</td><td>" + hobbyArray[3][1].funrating + "</td></tr><tr><th>  </th><td>" + hobbyArray[3][2].spec + "</td><td>" + hobbyArray[3][2].hpw + "</td><td>" + hobbyArray[3][2].yrstarted + "</td><td>" + hobbyArray[3][2].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[3][3].spec + "</td><td>" + hobbyArray[3][3].hpw + "</td><td>" + hobbyArray[3][3].yrstarted + "</td><td>" + hobbyArray[3][3].funrating + "</td></tr><tr><th> Community </th><td>" + hobbyArray[4][0].spec + "</td><td>" + hobbyArray[4][0].hpw + "</td><td>" + hobbyArray[4][0].yrstarted + "</td><td>" + hobbyArray[4][0].funrating + "</td></tr><tr><th> </th><td>" + hobbyArray[4][1].spec + "</td><td>" + hobbyArray[4][1].hpw + "</td><td>" + hobbyArray[4][1].yrstarted + "</td><td>" + hobbyArray[4][1].funrating + "</td></tr></table></div>");
+	document.write("<div><table style='margin: 0 auto; text-align: center;'><tr><th>Category</th><th> Hobby </th><th> Hours Per Week </th><th> Year Began </th><th> Fun Rating </th></tr>");
+	for(var i = 0; i < hobbyArray[0].length; i++) {
+		if(i == 0) document.write("<tr><th> Programming </th>");
+		else document.write("<tr><th></th>");
+		hobbyArray[0][i].show();
+	}
+	for(var i = 0; i < hobbyArray[1].length; i++) {
+		if(i == 0) document.write("<tr><th> Academics </th>");
+		else document.write("<tr><th></th>");
+		hobbyArray[1][i].show();
+	}
+	for(var i = 0; i < hobbyArray[2].length; i++) {
+		if(i == 0) document.write("<tr><th> Brainpower </th>");
+		else document.write("<tr><th></th>");
+		hobbyArray[2][i].show();
+	}
+	for(var i = 0; i < hobbyArray[3].length; i++) {
+		if(i == 0) document.write("<tr><th> Athletics </th>");
+		else document.write("<tr><th></th>");
+		hobbyArray[3][i].show();
+	}
+	for(var i = 0; i < hobbyArray[4].length; i++) {
+		if(i == 0) document.write("<tr><th> Community </th>");
+		else document.write("<tr><th></th>");
+		hobbyArray[4][i].show();
+	}
+	document.write("</tr></table></div>");
 
 </script>
 
@@ -123,6 +157,7 @@
 <a href="../hobbies/index.html">Hobbies</a>
 <a href="../projectInfo/index.html">Project Info</a>
 <a href="../projects/index.html">Projects</a>
+<a href="../writing/index.html">Writing</a>
 <a href="https://github.com/trinityd">GitHub</a>
 </hr>
 <hr>
